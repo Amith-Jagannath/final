@@ -1,0 +1,49 @@
+cart.css .dropdown-menu {
+  min-width: 60px !important;
+}
+
+.image {
+  width: 350px;
+  height: 390px;
+  margin-bottom: 20px;
+}
+
+.image1 {
+  width: 350px;
+  height: 390px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-buy,
+.detail-cart {
+  border-radius: 30px !important;
+  position: relative;
+  left: 0;
+}
+
+.detail-wish {
+  border-radius: 30px !important;
+  position: relative;
+  top: 60px;
+  left: 40px;
+}
+
+.detail-content {
+  position: absolute;
+  left: 30px;
+
+  bottom: 200px;
+}
+
+.size-button {
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.container {
+  position: relative;
+  top: 60px;
+}

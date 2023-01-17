@@ -1,0 +1,95 @@
+
+  .nav-link {
+  color: black !important;
+}
+
+.shoe-div {
+  margin-top: 20px;
+  width: 100%;
+
+  padding: 10px !important;
+}
+
+.shoe-image {
+  width: 289px;
+  height: 289px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.filtericon {
+  width: 15px;
+  height: 15px;
+}
+
+/* .offcanvas {
+    width: 250px !important;
+} */
+
+.filterside {
+  margin-top: 170px;
+  margin-left: 60px;
+  background: #ffffff !important;
+  box-shadow: 6px 2px 19px rgba(0, 0, 0, 0.1) !important;
+  outline: none !important;
+  color: black;
+  width: 100px;
+  font-family: sans-serif !important;
+  font-size: larger !important;
+}
+
+.sign-in,
+.sign-up {
+  background: none !important;
+  /* box-shadow: 6px 2px 19px rgba(0, 0, 0, 0.1) !important; */
+  border-radius: 30px !important;
+  width: 100px;
+  margin-left: 10px !important;
+  color: #fff !important;
+  /* background: rgba(255, 255, 255, 0.36) !important;
+    box-shadow: 0 9px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(3.9px) !important;
+    -webkit-backdrop-filter: blur(3.9px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; */
+}
+
+.search1 {
+  background: #ffffff !important;
+  box-shadow: 6px 2px 19px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 30px !important;
+  width: 100px;
+  margin-left: 7px !important;
+  /* background: rgba(255, 255, 255, 0.36) !important;
+    box-shadow: 0 9px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(3.9px) !important;
+    -webkit-backdrop-filter: blur(3.9px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; */
+}
+
+.search-input {
+  border-radius: 30px !important;
+}
+
+.navbar {
+  /* overflow: hidden; */
+  /* background-color: #333; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 1px;
+  /* backdrop-filter: blur(7.9px) !important;
+    -webkit-backdrop-filter: blur(7.9px) !important; */
+}
+
+#invisiblebtn,
+#invisiblefield {
+  display: none;
+  visibility: hidden;
+}
+
+/* detail-page */
+.image,
+.image1 {
+  width: 270px !important;
+  height: 280px !important;
+}

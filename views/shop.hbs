@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assests/css/shop.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/d7f199247a.js" crossorigin="anonymous"></script>
+
+  <title>sneakX</title>
+</head>
+
+<body style="background-color: white; overflow-x:hidden;" class="bg">
+  <nav class="navbar fixed-top navbar-expand-lg  " style="background-color: white;">
+    <div class="container-fluid">
+      <a class="navbar-brand  pe-5" href="#"><img class="logo" src="assests/images/sneaklogo.png" width="200px" height="120px"
+          alt="logo"></a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleXxl">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5" style="width: 200px;">
+          <li class="nav-item">
+            <form id="form_home" action="/home" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form_home').submit();"
+                class="nav-link active">HOME</a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+          <form id="form_men" action="/male" method="post">
+            <a href="javascript:;" onclick="document.getElementById('form_men').submit();"
+              class="nav-link active">MEN</a>
+            <input type="hidden" name="mess" />
+          </form>
+          <li class="nav-item">
+            <form id="form_women" action="/female" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form_women').submit();"
+                class="nav-link active">WOMEN</a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" aria-current="page" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              SHOP
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <form id="form1" action="/puma" method="post">
+                  <a href="javascript:;" onclick="document.getElementById('form1').submit();"
+                    class="dropdown-item">PUMA</a>
+                  <input type="hidden" name="mess" />
+                </form>
+              </li>
+              <li>
+                <form id="form2" action="/nike" method="post">
+                  <a href="javascript:;" onclick="document.getElementById('form2').submit();"
+                    class="dropdown-item">NIKE</a>
+                  <input type="hidden" name="mess" />
+                </form>
+              </li>
+              <li>
+                <form id="form3" action="/addidas" method="post">
+                  <a href="javascript:;" onclick="document.getElementById('form3').submit();"
+                    class="dropdown-item">ADIDAS</a>
+                  <input type="hidden" name="mess" />
+                </form>
+              </li>
+              <li>
+                <form id="form4" action="/crocs" method="post">
+                  <a href="javascript:;" onclick="document.getElementById('form4').submit();"
+                    class="dropdown-item">CROCS</a>
+                  <input type="hidden" name="mess" />
+                </form>
+              </li>
+              <li>
+                <form id="form5" action="/sparx" method="post">
+                  <a href="javascript:;" onclick="document.getElementById('form5').submit();"
+                    class="dropdown-item">SPARX</a>
+                  <input type="hidden" name="mess" />
+                </form>
+              </li>
+
+
+            </ul>
+          </li>
+
+        </ul>
+        <form action="/search_box" class="d-flex p-30px ms-5" role="search" method="post">
+          <input class=" search-input form-control me-2" type="search" name="shoe_name" placeholder="Search"
+            aria-label="Search">
+          <button class=" search1 btn btn-outline-light text-secondary" type="submit"><i
+              class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <form action="/cart" method="post">
+          <button class=" cart btn btn-outline-light text-dark "><i class="fa-solid fa-cart-shopping"></i></button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+  <div id="filterdiv">
+    <button class="btn  btn-light btn-sm filterside" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Filter <img class="filtericon"
+        src="assests/images/filtericon.png" alt=""></button>
+
+  </div>
+
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Categories</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <hr>
+      <div class="dropdown">
+
+        <button class=" gender btn btn-light dropdown-toggle " type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Gender
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <form id="form_male" action="/male" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form_male').submit();"
+                class="dropdown-item">Male</a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+          <li>
+            <form id="form_female" action="/female" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form_female').submit();"
+                class="dropdown-item">Female</a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+          <li>
+            <form id="form_unisex" action="/unisex" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form_unisex').submit();"
+                class="dropdown-item">Unisex</a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <div class="dropdown">
+        <button class=" gender btn btn-light dropdown-toggle " type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Shop By Price
+        </button>
+
+        <ul class="dropdown-menu">
+          <li>
+            <form id="form2k" action="/under2k" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form2k').submit();" class="dropdown-item">under
+                ₹2,500</a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+          <li>
+            <form id="form5k" action="/under2-5k" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form5k').submit();"
+                class="dropdown-item">₹2,500-₹5,000
+              </a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+          <li>
+            <form id="form7k" action="/under5-7k" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form7k').submit();"
+                class="dropdown-item">₹5,000-₹7,500
+              </a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+          <li>
+            <form id="form10k" action="/under7k" method="post">
+              <a href="javascript:;" onclick="document.getElementById('form10k').submit();" class="dropdown-item">Over
+                ₹7,500
+              </a>
+              <input type="hidden" name="mess" />
+            </form>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <div class="dropdown">
+
+        <button class=" gender btn btn-light dropdown-toggle " type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Brands
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+
+            <a href="javascript:;" onclick="document.getElementById('form1').submit();" class="dropdown-item">PUMA</a>
+            <input type="hidden" name="mess" />
+
+          </li>
+          <li>
+            <a href="javascript:;" onclick="document.getElementById('form2').submit();" class="dropdown-item">NIKE</a>
+            <input type="hidden" name="mess" />
+          </li>
+          <li>
+            <a href="javascript:;" onclick="document.getElementById('form3').submit();"
+              class="dropdown-item">ADDIDAS</a>
+            <input type="hidden" name="mess" />
+          </li>
+          <li>
+            <a href="javascript:;" onclick="document.getElementById('form4').submit();" class="dropdown-item">CROCS</a>
+            <input type="hidden" name="mess" />
+          </li>
+
+        </ul>
+      </div>
+      <hr>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Size
+        </button>
+        <ul class="dropdown-menu">
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2"><button type="button" class="btn btn-light">3</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">3.5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">4</button></div>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2"><button type="button" class="btn btn-light">4.5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">5.5</button></div>
+          </div>
+          <div class="d-flex flex-row mb-2">
+            <div class="p-2"><button type="button" class="btn btn-light">6(EU 39)</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">6(EU 40)</button></div>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2"><button type="button" class="btn btn-light">6.5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">7</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">7.5</button></div>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2"><button type="button" class="btn btn-light">8</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">8.5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">9</button></div>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2"><button type="button" class="btn btn-light">9.5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">10</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">10.5</button></div>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2"><button type="button" class="btn btn-light">11</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">11.5</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">12</button></div>
+          </div>
+          <div class="d-flex flex-row mb-2">
+            <div class="p-2"><button type="button" class="btn btn-light">13</button></div>
+            <div class="p-2"><button type="button" class="btn btn-light">14</button></div>
+          </div>
+        </ul>
+      </div>
+      <hr>
+    </div>
+    </p>
+  </div>
+
+
+
+  <div class="shoe-div">
+    <div class="row shoe_main " align="center">
+
+
+      {{#each info}}
+
+      <div class="col-lg-3">
+        <img class="shoe-image" src={{images.img1}} alt="">
+
+        <p>
+          {{!-- <input type="text" value={{product_id}} name="product_id" id="invisiblefield"><button type="submit"
+            id="invisiblebtn"></button> --}}
+
+          {{description}}<br>
+          MRP :{{cost}}<br>
+          incl. of taxes
+        </p>
+        <form action="/individualshoe" method="post">
+          <input type="text" value={{product_id}} name="product_id" id="invisiblefield">
+          <button type="submit" class="btn btn-dark" style="border-radius: 30px;">Buy</button>
+        </form>
+
+      </div>
+      </form>
+
+      {{/each}}
+
+    </div>
+  </div>
+
+  <div class="container">
+    <footer class=" py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5 style="color: rgb(9, 9, 9);">Content</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Men</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Women</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Shop</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cart</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h5 style="color: rgb(9, 9, 9);">Products</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Nike</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Puma</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Addidas</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Crocs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Skechers</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h5 style="color: rgb(9, 9, 9);">About Us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">sneakX</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Premium</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Developers</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5 style="color: rgb(9, 9, 9);">Subscribe to our newsletter</h5>
+            <p style="color: rgb(9, 9, 9);">Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-outline-light" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p style="color: rgb(9, 9, 9);">Designed & Build By Amith Jagannath Soorenji</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram"
+                style="color: rgb(9, 9, 9);"></i></a>
+          </li>
+          <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook"
+                style="color: rgb(9, 9, 9);"></i></a>
+          </li>
+          <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter"
+                style="color: rgb(9, 9, 9);width: 100px;"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="sneak.js"></script>
+<script>
+  function clickshoe(id) {
+    document.getElementById("invisiblebtn").click();
+    console.log(id);
+  }
+
+</script>
+
+</html>

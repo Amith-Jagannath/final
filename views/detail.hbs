@@ -1,0 +1,254 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sneakX</title>
+    <link rel="stylesheet" href="assests/css/shop.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../cart.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d7f199247a.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+    <nav class="navbar fixed-top navbar-expand-lg pe-5 " style="background-color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand  pe-5" href="#"><img class="logo" src="assests/images/sneaklogo.png" width="200px"
+                    height="120px" alt="logo"></a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleXxl">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5" style="width: 200px;">
+                    <li class="nav-item">
+                        <form id="form_home" action="/home" method="post">
+                            <a href="javascript:;" onclick="document.getElementById('form_home').submit();"
+                                class="nav-link active">HOME</a>
+                            <input type="hidden" name="mess" />
+                        </form>
+                    </li>
+                    <form id="form_men" action="/male" method="post">
+                        <a href="javascript:;" onclick="document.getElementById('form_men').submit();"
+                            class="nav-link active">MEN</a>
+                        <input type="hidden" name="mess" />
+                    </form>
+                    <li class="nav-item">
+                        <form id="form_women" action="/female" method="post">
+                            <a href="javascript:;" onclick="document.getElementById('form_women').submit();"
+                                class="nav-link active">WOMEN</a>
+                            <input type="hidden" name="mess" />
+                        </form>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" aria-current="page" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SHOP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <form id="form1" action="/puma" method="post">
+                                    <a href="javascript:;" onclick="document.getElementById('form1').submit();"
+                                        class="dropdown-item">PUMA</a>
+                                    <input type="hidden" name="mess" />
+                                </form>
+                            </li>
+                            <li>
+                                <form id="form2" action="/nike" method="post">
+                                    <a href="javascript:;" onclick="document.getElementById('form2').submit();"
+                                        class="dropdown-item">NIKE</a>
+                                    <input type="hidden" name="mess" />
+                                </form>
+                            </li>
+                            <li>
+                                <form id="form3" action="/addidas" method="post">
+                                    <a href="javascript:;" onclick="document.getElementById('form3').submit();"
+                                        class="dropdown-item">ADIDAS</a>
+                                    <input type="hidden" name="mess" />
+                                </form>
+                            </li>
+                            <li>
+                                <form id="form4" action="/crocs" method="post">
+                                    <a href="javascript:;" onclick="document.getElementById('form4').submit();"
+                                        class="dropdown-item">CROCS</a>
+                                    <input type="hidden" name="mess" />
+                                </form>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <form action="/search_box" class="d-flex p-30px ms-5" role="search" method="post">
+                    <input class=" search-input form-control me-2" type="search" name="shoe_name" placeholder="Search"
+                        aria-label="Search">
+                    <button class=" search1 btn btn-outline-light text-secondary" type="submit"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <form action="/cart" method="post">
+                    <button class=" cart btn btn-outline-light text-dark "><i
+                            class="fa-solid fa-cart-shopping"></i></button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    {{#each info}}
+    {{#if name}}
+    <div class="container col-xxl-8 px-4 py-5">
+
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+
+            <div class="col-10 col-sm-8 col-lg-6">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <img class="image" src="{{images.img1}}" alt="" />
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="image1" src="{{images.img2}}" alt="" />
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <img class="image" src="{{images.img3}}" alt="" />
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="image1" src="{{images.img4}}" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 detail-content" style="top: 150px;">
+                <h1 class="display-5 fw-bold lh-1 mb-3">{{description}}</h1>
+                <p style="top: 20px;">{{brief}}</p>
+
+                <div class="sizechart">
+                    <h4 class="size">Sizes:</h4>
+                    <button type="button" class="size-button btn btn-outline-secondary btn-lg px-4 m-2">
+                        6
+                    </button>
+                    <button type="button" class="size-button btn btn-outline-secondary btn-lg px-4 m-2">
+                        7
+                    </button>
+                    <button type="button" class="size-button btn btn-outline-secondary btn-lg px-4 m-2">
+                        8
+                    </button>
+                    <button type="button" class="size-button btn btn-outline-secondary btn-lg px-4 m-2">
+                        9
+                    </button>
+                    <button type="button" class="size-button btn btn-outline-secondary btn-lg px-4 m-2">
+                        10
+                    </button>
+                    <button type="button" class="size-button btn btn-outline-secondary btn-lg px-4 m-2">
+                        11
+                    </button>
+                </div>
+                {{!-- <div class=" gap-2 d-md-flex justify-content-md-start d-flex"> --}}
+                    <div class="">
+                    {{!-- <form action="https://formsubmit.co/amyth2002@gmail.com" method="POST"> --}}
+                        <form action="/checkout" method="post">
+                            <input id="name" class="input-field" type="hidden" name="Name" value="{{description}}" />
+                            <input id="name" class="input-field" type="hidden" name="Cost" value="{{cost}}" />
+                            <input id="name" class="input-field" type="hidden" name="Image" value="{{images.img1}}" />
+                            <input type="hidden" name="id" value="{{product_id}}" />
+                            <h4>Cost:{{cost}}</h4>
+                            <br>
+                            <button type="submit" class="detail-buy btn btn-dark btn-lg px-4 me-md-2">
+
+                                BUY NOW
+                            </button>
+                        </form>
+                        <form action="/addToCart" method="post">
+
+                            <input type="hidden" name="id" value="{{product_id}}" />
+                            {{!-- <button type="submit" class="detail-cart btn btn-outline-secondary btn-lg px-4">
+                                WISHLIST
+                            </button> --}}
+                            <button type="submit"
+                                class="  detail-wish btn btn-outline-secondary btn-lg px-4">WISHLIST</button>
+                        </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    {{/if}}
+    {{/each}}
+
+    <div class="container">
+        <footer class=" py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5 style="color: rgb(9, 9, 9);">Content</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Men</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Women</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Shop</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cart</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5 style="color: rgb(9, 9, 9);">Products</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Nike</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Puma</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Addidas</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Crocs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Skechers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5 style="color: rgb(9, 9, 9);">About Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">sneakX</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Premium</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Developers</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5 style="color: rgb(9, 9, 9);">Subscribe to our newsletter</h5>
+                        <p style="color: rgb(9, 9, 9);">Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-outline-light" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p style="color: rgb(9, 9, 9);">Designed & Build By Amith Jagannath Soorenji</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram pe-5"
+                                style="color: rgb(9, 9, 9);"></i></a>
+                    </li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook pe-5"
+                                style="color: rgb(9, 9, 9);"></i></a>
+                    </li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter pe-5"
+                                style="color: rgb(9, 9, 9);width: 100px;"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+</body>
+
+</html>

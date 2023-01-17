@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>sneakX</title>
+	<link rel="stylesheet" href="assests/css/style.css">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+
+	<script src="https://kit.fontawesome.com/d7f199247a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+	<div class="right-background">
+
+	</div>
+	<h1 class="feel">FEEL<br> YOUR<br> SOLE</h1>
+
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-none " id="navigation">
+		<div class="container-fluid">
+			<a class="navbar-brand  me-0 w-0" href="#"><img class="logo" src="./assests/images/sneaklogo.png" width="180px"
+					height="120px" alt="logo"></a>
+			<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExampleXxl">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5 ps-0">
+					<li class="nav-item">
+						<form id="form_male" action="/male" method="post">
+							<a href="javascript:;" onclick="document.getElementById('form_male').submit();"
+								class="nav-link active me-3">MALE</a>
+							<!-- <input type="submit" class="bg-tranparent" value="SHOP"> -->
+							<input type="hidden" name="mess">
+						</form>
+					</li>
+					<li class="nav-item">
+						
+
+						<form id="form_female" action="/female" method="post">
+							<a href="javascript:;" onclick="document.getElementById('form_female').submit();"
+								class="nav-link active me-3">FEMALE</a>
+							<!-- <input type="submit" class="bg-tranparent" value="SHOP"> -->
+							<input type="hidden" name="mess">
+						</form>
+					</li>
+
+
+
+					<li class="nav-item me-3 ">
+						<!-- <a class="nav-link active" aria-current="page" onclick="" href="anchor_click()">SHOP</a> -->
+						<form id="form_shop" action="/shoes" method="post">
+							<a href="javascript:;" onclick="document.getElementById('form_shop').submit();"
+								class="nav-link active me-3">SHOP</a>
+							<!-- <input type="submit" class="bg-tranparent" value="SHOP"> -->
+							<input type="hidden" name="mess">
+						</form>
+					</li>
+					<li class="nav-item">
+						<div class="searchbar" style="margin-left: 2px !important;">
+							<form class="d-flex p-90px ms-1" role="search" action="/search_box" method="post">
+								<input class=" search-input form-control w-75 me-2" type="search" placeholder="Search"
+									name="shoe_name" name="" aria-label="Search"
+									style="width: 280px !important ; height:43px !important ">
+								<button class=" search1 btn btn-outline-light text-secondary " type="submit"><i
+										class="fa-solid fa-magnifying-glass"></i></button>
+							</form>
+						</div>
+					</li>
+
+
+
+					<li class="nav-item"><button class="  sign-in btn btn-light text-light me-1 " id="loginBtn">SIGN
+							IN</button>
+
+					</li>
+					<li class="nav-item"><button class=" sign-up btn btn-outline-light text-light me-3"
+							id="register">SIGN
+							UP</button>
+					</li>
+
+
+					<li class="nav-item">
+						<form action="/cart" method="post">
+							<button class=" cart btn btn-outline-light text-dark "><i
+									class="fa-solid fa-cart-shopping"></i></button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form action="/logout" method="post">
+							<button class=" logout btn btn-outline-light text-dark "><i
+									class="fa-solid fa-right-from-bracket"></i></button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- <div id="result">
+		<h4>{{message}}</h4>
+	</div> -->
+
+
+	<div class="modal1 register hidden">
+		<!-- <button class="btn--close-modal-register">&times;</button> -->
+		<button type="button" class="btn-close btn--close-modal-register" aria-label="Close"></button>
+		<h1 class="modal__header">Register</h1>
+		<form action="/register" method="post">
+			<div class="input-field">
+				<input type="text" id="nameRegister" placeholder="Your Name" name="username" />
+			</div>
+			<div class="input-field">
+				<input type="email" id="emailRegister" placeholder="Email" name="email" />
+			</div>
+			<div class="input-field">
+				<input type="text" id="number" placeholder="Phone no" name="number" />
+			</div>
+			<div class="input-field">
+				<input type="password" id="passwordRegister" placeholder="password" name="password" />
+			</div>
+
+			<!-- <button id="register" type="button" class="btn btn-dark">
+					Register
+				</button> -->
+			<input type="submit" id="register" class="btn btn-dark" value="register">
+			<p class="para_register">already have an account?</p>
+			<button id="btn3" type="button" class="btn btn-dark">Login</button>
+		</form>
+	</div>
+	<div class="modal1 login hidden">
+		<!-- <button class="btn--close-modal-login">&times;</button> -->
+		<button type="button" class="btn-close btn--close-modal-login" aria-label="Close"></button>
+		<h1 class="modal__header">Login</h1>
+		<form action="/login" method="post">
+			<input type="text" id="emailLogin" placeholder="Email" name="email" />
+			<input type="password" id="passwordLogin" placeholder="password" name="password" />
+
+			<button id="loginBtn" type="submit" class="btn btn-dark">
+				Login
+			</button>
+		</form>
+	</div>
+
+	<!-- hero section -->
+
+	<section id="shoe-branding">
+
+		<div id="branding-carousel" class="carousel slide " data-ride="false">
+			<div class="carousel-inner">
+				<form action="/individualshoe" method="post">
+					<div class="carousel-item active ">
+						<div class="shoe-front-content">
+							<h1 class="shoe-title">NIKE AIR MAX</h1>
+							<h2 class="nike">Nike Fans<br>
+								Rings are common,gift your partner <br>a pair of Jordans !!</h2>
+							<img class="nike-jordan" src="./assests/images/orange-jordan.png" alt="">
+							<img class="nike-jordan1" src="./assests/images/orange-jordan.png" alt="">
+
+							<input type="hidden" name="product_id" value=32>
+							
+
+
+
+							<form action="/addToCart" method="post">
+								<input type="hidden" value="32" name="id"> 
+								<button type="submit" class="btn btn-light add-to-cart" id="add">BUY NOW</button>
+								
+							</form>
+
+						</div>
+					</div>
+				</form>
+				<form action="/individualshoe" method="post">
+					<div class="carousel-item">
+						<div class="shoe-front-content">
+							<h1 class="shoe-title">PUMA X FERRARI</h1>
+							<h2 class="nike">Puma Fans<br>
+								Derive the power of <br>Scuderia Ferrari GT cars !!</h2>
+							<img class="ferrari-puma" src="./assests/images/ferrari-puma.png" alt="">
+							<img class="ferrari-puma1" src="./assests/images/ferrari-puma.png" alt="">
+							<input type="hidden" value="33" name="product_id">
+							
+							<button type="submit" class="btn btn-light add-to-cart-ferrari">BUY NOW</button>
+
+						</div>
+					</div>
+				</form>
+				<form action="/individualshoe" method="post">
+					<div class="carousel-item">
+						<div class="shoe-front-content">
+							<h1 class="shoe-title">ADIDAS 4DFWD 2</h1>
+							<h2 class="nike">Adidas Fans<br>
+								Adidas 4DFWD 2<br> Running shoes</h2>
+							<img class="addidas-shoe" src="./assests/images/adi.png" alt="">
+							<img class="addidas-shoe1" src="./assests/images/adi.png" alt="">
+
+							<input type="hidden" value="35" name="product_id">
+						
+
+
+							<button type="submit" class="btn btn-light add-to-cart-addidas">BUY NOW</button>
+
+						</div>
+					</div>
+				</form>
+				<button class="carousel-control-prev" type="button" data-bs-target="#branding-carousel"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#branding-carousel"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+	</section>
+
+
+
+
+
+	<section class="section" id="video">
+		<video autoplay loop muted plays-inline class="back">
+			<source src="./assests/vedios/pexels-cottonbro-5310858.mp4" type="video/mp4">
+		</video>
+		<h2 class="vedio_para">"Get Ready To Feel Your <span style="color: rgb(248, 115, 115);">SOLE</span>"</h2>
+	</section>
+	<section class="section" id="collection">
+		<h2 class="collections">COLLECTIONS</h2>
+		<div class="row" align="center">
+			<div class="col-lg-4 my-2">
+				<form id="form_male" action="/male" method="post">
+					<a href="javascript:;" onclick="document.getElementById('form_male').submit();"
+						class="nav-link active me-3"><img src="./assests/images/MAN-F.jpg" alt="" class="select"></a>
+					<!-- <input type="submit" class="bg-tranparent" value="SHOP"> -->
+					<input type="hidden" name="mess">
+				</form>
+
+			</div>
+			<div class="col-lg-4 my-2">
+				<form id="form_female" action="/female" method="post">
+					<a href="javascript:;" onclick="document.getElementById('form_female').submit();"
+						class="nav-link active me-3"><img src="./assests/images/WOMEN.jpg" alt="" class="select"></a>
+					<!-- <input type="submit" class="bg-tranparent" value="SHOP"> -->
+					<input type="hidden" name="mess">
+				</form>
+
+
+			</div>
+			<div class="col-lg-4 my-2">
+				<img src="./assests/images/APPAREL-F.jpg" alt="" class="select">
+
+			</div>
+		</div>
+	</section>
+	<section class="section" id="jordan-section">
+		<div class="jordan-content">
+			<h class="jordan-heading">Leap High.<br>Feel the Sky.<br>Jordan Shoes<br> in the House.</h>
+			<form id="form2" action="/nike" method="post">
+				<a href="javascript:;" onclick="document.getElementById('form2').submit();"
+					class="dropdown-item"><button
+						class=" nav-item shop-jordan btn btn-outline-light text-secondary  ">SHOP</button></a>
+				<input type="hidden" name="mess" />
+			</form>
+
+		</div>
+		<!-- <img src="./assests/images/snike-just-do-it.jpg" alt="" class="jordan-fan">
+	 -->
+	</section>
+	<section class="section" id="cards">
+		<h2 class="accessories">CUSTOMIZATION</h2>
+		<div class="row " align="center">
+			<div class="col-lg-4 my-2">
+
+				<img src="./assests/images/customization.jpg" class="  cardimg" alt="...">
+
+
+
+			</div>
+			<div class="col-lg-4 my-2 ">
+
+				<img src="./assests/images/customization2.jpg" class=" cardimg" alt="...">
+
+
+
+			</div>
+			<div class="col-lg-4 my-2 ">
+
+				<img src="./assests/images/customization3.jpg" class=" cardimg" alt="...">
+
+
+
+			</div>
+
+		</div>
+	</section>
+
+	<div class="container">
+		<footer class="py-5">
+			<div class="row">
+				<div class="col-6 col-md-2 mb-3">
+					<h5 style="color: white;">Content</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Men</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Women</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Shop</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cart</a></li>
+					</ul>
+				</div>
+
+				<div class="col-6 col-md-2 mb-3">
+					<h5 style="color: white;">Products</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Nike</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Puma</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Addidas</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Crocs</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Skechers</a></li>
+					</ul>
+				</div>
+
+				<div class="col-6 col-md-2 mb-3">
+					<h5 style="color: white;">About Us</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">sneakX</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Premium</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Developers</a></li>
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-5 offset-md-1 mb-3">
+					<form>
+						<h5 style="color: white;">Subscribe to our newsletter</h5>
+						<p style="color: white;">Monthly digest of what's new and exciting from us.</p>
+						<div class="d-flex flex-column flex-sm-row w-100 gap-2">
+							<label for="newsletter1" class="visually-hidden">Email address</label>
+							<input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+							<button class="btn btn-outline-light" type="button">Subscribe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+				<p style="color: white;">Designed & Build By Amith Jagannath Soorenji</p>
+				<ul class="list-unstyled d-flex">
+					<li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram"
+								style="color:white;"></i></a></li>
+					<li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook"
+								style="color:white;"></i></a></li>
+					<li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter"
+								style="color:white;width: 100px;"></i></a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+
+</body>
+<script src="login.js"></script>
+<script>
+
+
+	window.addEventListener('load', (event) => {
+		setTimeout(function () {
+			document.getElementById("result").innerHTML = "";
+		}, 1000);
+
+	});
+	const add = document.getElementById('add');
+	console.log(add);
+	add.addEventListener('click', function () {
+		console.log('yde');
+	})
+
+</script>
+
+</html>
